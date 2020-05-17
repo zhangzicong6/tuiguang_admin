@@ -1,0 +1,23 @@
+{
+  "globalToken": {
+    "count": 1,
+    "modifyDate": "2018-03-20T09:00:42.701Z",
+    "accessToken": "7_7nLvhDIA9pLYghCTnDQyjXq4CYtRwlOafvd7nMM8Iji53Y0rFD0p9bQBBDDMuH34MccysoLiaHrAQU0xSPgQnYAaSsQB-zhFJeyjwtGUONJj2_M3V0hcXXZ0Hp1yZlhbSVkbAQku4UxgyvXSKUYhAGANXB",
+    "jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9ojBM4hJhEei7vjlFbCkRr1MNKFCtJy8TDfqxZ_kDTwrNW1CXEGEY-8nFt5sdCj5sw"
+  },
+  "urls": {
+    "http://192.168.33.10:3000/books/share/587": {
+      "jsapi_ticket": "HoagFKDcsGMVCIY2vOjf9ojBM4hJhEei7vjlFbCkRr1MNKFCtJy8TDfqxZ_kDTwrNW1CXEGEY-8nFt5sdCj5sw",
+      "nonceStr": "l0lxr743sc4nbqm",
+      "timestamp": "1521536442",
+      "url": "http://192.168.33.10:3000/books/share/587",
+      "signature": "dce525299170a6f89802ed941dc46fa51c557a34",
+      "accessToken": "7_7nLvhDIA9pLYghCTnDQyjXq4CYtRwlOafvd7nMM8Iji53Y0rFD0p9bQBBDDMuH34MccysoLiaHrAQU0xSPgQnYAaSsQB-zhFJeyjwtGUONJj2_M3V0hcXXZ0Hp1yZlhbSVkbAQku4UxgyvXSKUYhAGANXB",
+      "signatureName": "http://192.168.33.10:3000/books/share/587",
+      "createDate": "2018-03-20T09:00:42.702Z",
+      "modifyDate": "2018-03-20T09:00:42.702Z",
+      "updated": true
+    }
+  },
+  "oauth": {}
+}

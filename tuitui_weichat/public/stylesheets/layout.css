@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+* Noto Sans TC (Chinese_traditional) http://www.google.com/fonts/earlyaccess
+*/
+* {margin:0; padding:0; outline:0; -webkit-text-size-adjust:none; tap-highlight-color:rgba(0,0,0,.08); -webkit-tap-highlight-color:rgba(0,0,0,.08); -ms-tap-highlight-color:rgba(0,0,0,.08);}
+html{font-family:tahoma,arial,sans-serif; font-size:12px; line-height:1em; height:100%;}
+body{font-size:.24rem; font-family:"Noto Sans CJK SC", "Source Han Sans CN"; color:#222; -webkit-text-size-adjust:none; line-height:1.2; margin:0 auto; background:#FFF; width:100%;}
+ul,ol,li{list-style:none;}
+.clear{clear:both;}
+
+i.laiyuan1{width:15px; height:15px; display:inline-block; margin:3px 5px 0 0; float:left;}
+i.laiyuan2{background:url('../images/tmall_ico.png'); width:15px; height:15px; display:inline-block; margin:3px 5px 0 0; float:left;}
+
+.goodsBody .goods .p2 .span1{margin-left:15px; margin-top:7px !important;}
+.goodsBody .goods .p2 .span2{color:#ee2e5b; margin-left:10px; margin-top:2px;}
+.goodsBody .goods .p2 .span3{color:#fff; background-color:#F25389; padding:0 5px 0; border-radius:2px; line-height:24px; height:22px; display:inline-block;}
+.goodsBody .goods dd .p2 font{font-size:30px;}
+.tao_detail{line-height:0; margin-bottom:60px; border-bottom:20px solid #f8f8f8;}
+.goodsBody .goods .span5{background:url('../images/quan_2.png'); display:inline-block; width:102px; height:57px; float:right; text-align:center; padding-top:0px; font-size:14px; color:#aaa;}
+.goodsBody .goods .span6{background:url('../images/quan_1.png'); display:inline-block; width:102px; height:57px; float:right; text-align:center; padding-top:0px; font-size:14px; color:#ee2e5b;}
+.goodsBody .goods dd .p1{margin-bottom:0; font-size:15px; font-weight:100;}
+.goodsBody .goods dd .p2{padding-top:20px; position:relative;}
+.goodsBody .goods .span5 font{font-size:26px;}
+.goodsBody .goods .span6 font{font-size:26px;}
+.yi-toolbar li a.yi-toolbar-lingquan{padding:3px 0px; border:1px solid #FF0036; border-radius:3px; height:30px; line-height:30px; margin:0 8px; color:#FF0036; font-size:15px;}
+.yi-toolbar li a.yi-toolbar-tao{padding:5px 0px; border-radius:3px; height:50px; line-height:50px; margin:0 8px; color:#F25389; font-weight:700; font-size:15px;}
+.yi-toolbar .yi-toolbar-tao span{width:auto; display:inline-block; margin:0 auto; text-indent:28px; height:50px; font-size:20px;}
+.fuzhitaokl{margin:10px 7px; background:#F25389; text-align:center; padding:15px 0; color:#FFF; font-size:20px; border-radius:26px;}
+.newstkl{display:none; position:fixed; z-index:999; top:0; margin:8% 6% 0; padding:0px 15px 5px; border-top:5px solid #F25389; border-radius:5px 5px 0 0;}
+.bg_yinyin{opacity:0.2;}
+.close{position:absolute; width:21px; height:30px; background:url(/images/icon_close.png) no-repeat 0px 7px; background-size:16px; right:8px; top:3px;}
+.tkl_box{position:fixed; top:0; bottom:0; left:0; right:0; z-index:1; background-color:rgba(0,0,0,.3); display:none;}
+.ul_list_spf{margin-top:15px; height:30px; position:relative;}
+.ul_list_spf li{width:30%; float:left; line-height:30px; font-size:14px; color:#666; position:absolute; bottom:0;}
+.ul_list_spf li.view_provcity{color:#999; width:28%; left:30%;}
+.ul_list_spf li.fanli{color:#F25389; width:41%; left:58%;}
+.ul_list_spf li.fanli font{font-size:18px;}
+.goodsBody dl.goods{border-bottom:0;}
+
+.coupon_box{height:100px; margin:0 10px 30px;}
+.coupon_box div{float:left; height:100px;}
+.coupon_box .coupon_bos_lift{border-radius:3px 0 0 3px; width:3.7rem; background:-webkit-linear-gradient(left, #FF4C89, #FF3037); color:#fff;}
+.coupon_box .coupon_box_middle{width:11px; background:url('../images/layout/yhq.png')}
+.coupon_box .coupon_box_right{width:1.8rem; background:url('../images/layout/yhq2.png') no-repeat top right; line-height:100px; font-size:14px; padding-right:8px;}
+.coupon_box .coupon_box_right a{width:100%; background:#ff3037; display:block; color:#fff; text-align:center;}
+.coupon_box .coupon_bos_lift .coupon_price{display:block; font-size:26px; margin-top:21px; text-align:center;}
+.coupon_box .coupon_bos_lift .coupon_date{text-align:center; display:block; margin-top:15px; font-size:12px;}
+.coupon_box .coupon_bos_lift .coupon_price.acp{margin:0; line-height:100px; display:block;}
+.shop_nick{height:40px; border-top:5px solid #f8f8f8; background:#fff; position:relative;}
+.shop_nick i{width:19px; height:20px; display:inline-block; margin:0 0 0 15px; position:relative; top:5px;}
+.shop_nick span{display:inline-block; line-height:40px; margin-left:15px;}
+.tao_detail_tile{height:40px; line-height:40px; text-align:center; border-top:5px solid #f8f8f8; color:#F25389; font-weight:100; font-size:16px; padding:5px 0;}
+.detail_connect{}
+
+.newstkl .h_inline{color:#F25389; text-align:center; height:40px; margin:0 auto;}
+.newstkl .h_inline .span_line{line-height:40px; display:inline-table; background:#fff; position:relative;}
+.newstkl .h_inline .span_line:before, .newstkl .h_inline .span_line:after{content:''; position:absolute; top:52%; background:#F25389; width:68%; height:1px;}
+.newstkl .h_inline .span_line:before{left: -81%;}
+.newstkl .h_inline .span_line:after{right: -81%;}
+.newstkl .word_box{border:1px dashed #FF494F; background:#FFF4F8; padding:6px;}
+.newstkl .coupon_tishi{margin-top:10px; color:#333333;}
+.newstkl .coupon_zhushi{color:#2A2A2A; font-size:12px; margin-bottom:8px;}
+.newstkl .coupon_zhushi code{color:#F25389;}
+.newstkl .coupon_zhushi span span{border: 1px solid #FF494F; display:inline-table; width:20px; height:8px; margin:0 4px;}
+
+
+.header_top{position:relative; z-index:999; width:100%; top:0; background:#F25389;}
+.header_2 .close{display:none; position:absolute; width:21px; height:30px; margin-top:.1rem; background:url(/images/close.png) no-repeat 0px 7px; background-size:16px;}
+body.search-box .header_2 .close{display:block; margin-left:1px; left:9px; top:0;}
+.header_2 .header_search .text{margin:.12rem .1rem 0 .1rem; width:90%; background:rgba(255,255,255,0.28) url(../images/layout/search.png) no-repeat 9px 9px; background-size:4%; padding:.11rem .2rem; border-width:0; border-radius:3px; opacity:.9; text-indent:21px; font-family:PingFangSC-Regular; color:#fff; font-size:14px;}
+body.search-box .header_2 .header_search .text{width:4.5rem; background-size:5%;}
+.header_2 .header_search input[type=submit]{display:none;}
+body.search-box .header_2 .header_search input[type=submit]{display:inline; position:absolute; width:.8rem; padding:.11rem 0; margin-top:.12rem; border:none; background:rgba(255,255,255,0.28); right:0.3rem; font-size:14px; color:#fff; border-radius:3px;}
+.header_yii{position:fixed; z-index:99; width:100%; background:#FFF;}
+.line_height{background:#f6f6f6; height:.2rem; width:100%;}
+#navContain #navList li{padding:0; width:33%; text-align:center;}
+#navContain #navList li a.cur{padding:0 5px; border-bottom:2px solid #F25389;}
+.header_2 .header_search{background:none; margin-top:0;}
+.mu-l2w li, .xlqgShop_ul li{border-bottom:1px solid #E8E8E8;}
+.mu-l2w li .r-news p.price_list{font-size:12px; margin-top:.23rem;}
+.mu-l2w li .r-news p.price_list code{color:#ff494f; font-size:10px;}
+.mu-l2w li .r-news p.price_list font{color:#ff494f; font-size:17px;}
+.orig_price{margin-left:5px;}
+.mu-l2w li .r-news p.sell_list{margin-top:.3rem;}
+#navContain{width:100%;}
+#navContain #navList{width:100%; padding:0; overflow:visible;}
+.sapn_sell{color:#666;}
+.list_provcity{color:#ccc; float:right; color:#999;}
+.header_2 #navContain{border-bottom:1px solid #E8E8E8;}
+.shuju_load .r-news .goods-list-title{font-size:14px; height:.68rem;}
+.i_star{background:url('../images/layout/xing.png'); display:inline-block; width:30px; height:28px; float:right; position:relative; bottom:7px; background-size:30px;}
+
+/* Footer */
+div.yi-shangqiao{border-top:0;}
+.yi-shangqiao .yi-toolbar li{padding:0; height:60px; border-top:1px solid #F25389;}
+.yi-toolbar li .yi-shoutao-buy{background:#F25389; height:60px;}
+.yi-toolbar li .yi-shoutao-buy span{display:inline-block; color:#fff;text-indent:31px; line-height:60px; margin:0 auto; height:60px; font-size:20px; font-weight:700; width:auto;}
+
+.weixin-tip{display:none; position:fixed; left:0; top:0; bottom:0; background:rgba(0,0,0,0.8); filter:alpha(opacity=80);  height:100%; width:100%; z-index:100;}
+.weixin-tip p{text-align:center; margin-top:10%; padding:0 5%;}

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"><link rel="icon" href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* css 代码  */
+        </style>
+        <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    </head>
+    <body>
+        <div id="container" style="max-width:800px;height:400px"></div>
+        <script>
+         Highcharts.setOptions({ global: { useUTC: false } }); 
+         
+        var content_data = <%- data %>;
+        //content_data = JSON.parse(content_data) 
+        var data ={
+        	title: {
+				text: '增量数据'
+			},
+			yAxis: {
+				title: {
+						text: '个数'
+				}
+			},
+			xAxis : {
+				type: 'datetime',
+				labels:{
+					formatter: function(){
+						return Highcharts.dateFormat('%m-%d %H:%M', this.value);  //格式化x轴时间格式
+					}
+				},
+				categories:[]
+	        },
+	        series :[
+	        {name:'uv',data:[]},
+	        {name:'cv',data:[]}
+	        ]
+        }
+
+        for (var i = 0; i < content_data.length; i++) {
+        	var tuiguang = content_data[i]
+        	data.series[0].data.push(tuiguang.uv)
+        	data.series[1].data.push(tuiguang.cv)
+        	data.xAxis.categories.push(new Date(tuiguang.date))
+        }
+
+        var chart = Highcharts.chart('container', data);
+        </script>
+    </body>
+</html>

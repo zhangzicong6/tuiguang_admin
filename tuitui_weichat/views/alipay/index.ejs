@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>提现</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/alipay.css" />
+</head>
+
+<body>
+    <%
+        function text_status(status){
+            switch (status){
+                case 0:
+                return '待审核';
+                case 1:
+                    return '审核通过';
+                case 2:
+                    return '已提现';
+                case -1:
+                    return '审核失败';
+                case -2:
+                    return '付款失败';
+            }
+        }
+
+
+        function convertUTCTimeToLocalTime(UTCDateString) {
+            if(!UTCDateString){
+              return '-';
+            }
+            function formatFunc(str) {    //格式化显示
+              return str > 9 ? str : '0' + str
+            }
+            var date2 = new Date(UTCDateString);     //这步是关键
+            var year = date2.getFullYear();
+            var mon = formatFunc(date2.getMonth() + 1);
+            var day = formatFunc(date2.getDate());
+            var hour = date2.getHours();
+            var noon = hour >= 12 ? 'PM' : 'AM';
+            hour = hour>=12?hour-12:hour;
+            hour = formatFunc(hour);
+            var min = formatFunc(date2.getMinutes());
+            var dateStr = year+'/'+mon+'/'+day;
+            return dateStr;
+      }
+        
+    %>
+    <div class="container">
+        <!-- header -->
+        <header>
+            <span>提现</span>
+        </header>
+        <!-- header -->
+        <!-- 提现金额 -->
+        <div class="pocket">
+            <img src="/images/pocket.png" alt="">
+            <p class="money">￥<span style="font-size: 0.25rem;"><%= user.current_balance.toFixed(2)%></span></p>
+            <p>可提现金额</p>
+        </div>
+        <!-- 提现金额 -->
+        <!-- 提现账户信息 -->
+        <ul class="list">
+            <li>
+                <label for="">微信号：</label>
+                <input id="wechat_number" type="text" placeholder="请填写提现微信号" 
+                <%if(cashs.length>0){%> value="<%=cashs[0].wechat_number%>"<%}%> />
+            </li>
+            <li>
+                <label for="">真实姓名(重要)：</label>
+                <input id="payee_real_name" type="text" placeholder="请填写真实姓名" 
+                <%if(cashs.length>0){%> value="<%=cashs[0].payee_real_name%>"<%}%>/>
+            </li>
+            <li>
+                <label for="">支付宝账号(重要)：</label>
+                <input id="payee_account" type="text" placeholder="请填写支付宝账号"
+                 <%if(cashs.length>0){%> value="<%=cashs[0].payee_account%>"<%}%>/>
+            </li>
+            <li>
+                <label for="">提现金额：</label>
+                <input id="price" type="text" placeholder="请填写提现金额" disabled="" value="<%= user.current_balance.toFixed(2)%>" />
+            </li>
+            <input type="hidden" id="wechat" name="wechat" value="<%=wechat%>">
+            <input type="hidden" id="openid" name="openid" value="<%=user.openid%>">
+        </ul>
+        <!-- 提现账户信息 -->
+        <!-- 提示 -->
+        <div class="tips">
+            <p>提示：</p>
+            <p>1、支付宝账号作为提现依据，微信号作为唯一联系人，请如实填写 2、佣金高于
+                1元可以申请提现 3、申请提现后，请耐心等待客服审核，一般1-2个工作日内通过
+            </p>
+            <a href="javascript:void(0);">点击提现</a>
+        </div>
+        <!-- 提示 -->
+        <!-- 提现记录 -->
+        <div class="record">
+            <div><span>提现记录</span></div>
+            
+           <table>
+                <thead>
+                    <td>时间</td>
+                    <td>提现金额</td>
+                    <td>提现状态</td>
+                </thead>
+               <tbody>
+               
+                <%for(var i =0;i<cashs.length;i++){%>
+                   <tr>
+                       <td><%= convertUTCTimeToLocalTime(cashs[i].updateAt)%></td>
+                       <td>￥<%= cashs[i].price%></td>
+                       <td><%= text_status(cashs[i].status)%>
+                           <%if(cashs[i].status == -2){%><br/>（<%=cashs[i].err_msg%>）<%}%>
+                       </td>
+                   </tr>
+                <%}%>
+                </tbody>
+           </table>
+        </div>
+        <!-- 提现记录 -->
+    </div>
+</body>
+<script src="/javascripts/zepto.min.js"></script>
+<script>
+    function refresh() {
+			var width=document.documentElement.clientWidth;
+			if(width<375){
+					document.documentElement.style.fontSize=width/3.75+"px";
+			}else{
+					document.documentElement.style.fontSize="100px";
+			}
+	}
+	refresh();
+	window.onresize=refresh;
+
+    $(function () {  
+        $('.tips a').click(function(){
+            var $this = $(this);
+            if($this.attr("disabled")){
+                return;
+            }
+            $this.attr('disabled',true);
+            var money = $('.money span').text();
+            var amount = $('#price').val();
+            var inps = $('.list li input');
+            if(Number(amount)<1){
+                alert('账户余额小于1元，不可提现');
+                return;
+            }
+            if (Number(amount)>money){
+                alert('提现金额大于总金额了');
+                return;
+            }
+            for(var i =0;i<inps.length;i++){
+                if($(inps[i]).val().trim() == ''){
+                    var str = $(inps[i]).next('label').text()+'不能为空';
+                    alert(str);
+                    return;
+                }
+            }
+            data = {
+                price : Number(amount),
+                payee_account : $('#payee_account').val().trim(),
+                wechat : $('#wechat').val().trim(),
+                openid : $('#openid').val().trim(),
+                payee_real_name : $('#payee_real_name').val().trim(),
+                wechat_number : $('#wechat_number').val().trim(),
+            };
+            $.post('/alipay/cash', data, function(response,status){
+                if(!response){
+                    return alert('网络问题');
+                }
+                if(response.code==-1){
+                    alert(response.message);
+                    $this.removeAttr('disabled');
+                }else{
+                    location.reload();
+                }
+                
+            })
+        })
+    });
+
+    
+
+</script>
+
+</html>

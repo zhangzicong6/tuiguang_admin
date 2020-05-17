@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>明星说</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/jiazai.min.js"></script>
+  </head>
+  <body>
+  		<form action="/adzone/setvideo">
+	  		<div>视频标题：
+	  			<input type="text" name="title" value="<%=title%>" style="width: 600px;height: 36px;" />
+	  		</div>
+  		
+	      <div style="margin-top: 10px ">视频链接：
+		      <input type="text" name="video_url" value="<%=video_url%>" style="width: 600px;height: 36px;" />
+	      </div>
+	    
+        <div style="margin-top:10px ">
+          是否分享：
+          <input type="checkbox" name="share" value="<%= share%>" <%if(share){%> checked<%}%>/>
+        </div>  
+  		
+  			<input type="submit" value="确定" style="width: 120px;height: 50px;background: #61B509;font-size: 20px;margin-top: 10px; ">
+  		</div>
+  		
+  		<input type="hidden" name="program" value="<%=program%>">
+  		</form>
+  </body>
+</html>
