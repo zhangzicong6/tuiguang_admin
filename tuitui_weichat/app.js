@@ -80,7 +80,7 @@ app.use(session({
 app.use('/', index);
 app.use('/users', users);
 app.use('/weichat',weichat);
-app.use('/adzone',adzone);
+//app.use('/adzone',adzone);
 app.use('/alipay',alipay);
 app.use('/alipayLink',alipayLink);
 app.use('/piclink',piclink);
