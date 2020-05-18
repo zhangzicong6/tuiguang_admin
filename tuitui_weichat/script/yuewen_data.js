@@ -111,8 +111,8 @@ let get_order = async (params) =>{
 	for (let key in params) {
 		args.push(key+'='+params[key])
 	}
-	//console.log(params)
 	url += '?'+args.join('&')
+	console.log(url)
 	let y_res = await rp(url)
 	console.log(y_res)
 	y_res = JSON.parse(y_res)
