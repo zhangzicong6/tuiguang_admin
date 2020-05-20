@@ -1,7 +1,7 @@
 const TuiGuangModel = require('../model/TuiGuang.js');
 const async = require('async');
 const ali_oss_util = require('../util/ali_oss_util');
-const img_path ='/home/work/tuiguang/project/public/images/website/'
+const img_path ='/home/work/tuiguang_front/project/public/images/website/'
 
 let get = async () => {
 	let tuiguangs = await TuiGuangModel.find();
